@@ -1,0 +1,9 @@
+@use "variables" as v;
+
+.section {
+    margin-top: calc(v.$gap / 2);
+    margin-bottom: calc(v.$gap / 2);
+}
+.container-center {
+    max-width: 800px;
+}

@@ -1,0 +1,7 @@
+@use 'variables' as v;
+@use 'sass:color' as color;
+
+body {
+    background-color: color.adjust(v.$darkGray, $lightness: -10%);
+    color: v.$white
+}

@@ -1,0 +1,28 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.ads{
+    &-container{
+        @include m.container();
+    }
+}
+.ad-content{
+    background-color: v.$darkGray;
+    margin-bottom: 2rem;
+
+    .ad-info{
+        @include m.container();
+        .icons-list{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            max-width: 40rem;
+            @include m.reset-list();
+            li{
+                display: flex;
+                flex-direction: row;
+                gap: 1.5rem;
+            }
+        }
+    }
+}
