@@ -4,6 +4,11 @@
 .ads{
     &-container{
         @include m.container();
+        @include m.tablet{
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+        }
     }
 }
 .ad-content{
@@ -11,18 +16,45 @@
     margin-bottom: 2rem;
 
     .ad-info{
-        @include m.container();
+        padding: 2rem;
+        h3,p{
+            margin: 0;
+        }
         .icons-list{
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
             max-width: 40rem;
-            @include m.reset-list();
+            
             li{
                 display: flex;
-                flex-direction: row;
-                gap: 1.5rem;
+                flex: 1;
+                img{
+                    flex: 0 0 3rem;
+                    margin-right: 1rem;
+                    filter: invert(100%);
+                }
             }
         }
+        button{
+            background-color: v.$yellow;
+            width: 100%;
+            border: none;
+            color: v.$white;
+            font-weight: v.$bold;
+            font-size: 1.5rem;
+            padding: 1.5rem;
+        }
+    }
+}
+
+.ad-info{
+    p{
+        color: v.$white;
+    }
+    .price{
+        color: v.$green;
+        font-weight: v.$bold;
+        font-size: 3rem;
     }
 }
