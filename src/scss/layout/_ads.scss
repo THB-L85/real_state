@@ -10,7 +10,8 @@
             gap: 2rem;
         }
     }
-    button{
+    a{
+        display: block;
         background-color: v.$yellow;
         width: 100%;
         border: none;
@@ -18,6 +19,7 @@
         font-weight: v.$bold;
         font-size: 1.5rem;
         padding: 1.5rem 3rem;
+        text-align: center;
     }
 }
 .ad-content{
@@ -60,14 +62,14 @@
 .button-container{
     @include m.container();
     text-align: center;
-    button{
+    a{
         width: auto;
         background-color: v.$green;
     }
     @include m.tablet{
         display: flex;
         justify-content: end;
-        button{
+        a{
             width: fit-content;
         }
     }

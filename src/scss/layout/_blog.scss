@@ -1,0 +1,38 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.blog{
+    @include m.tablet{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    };
+}
+.blog-content{
+    @include m.container();
+    article{
+        @include m.tablet{
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        };
+    }
+    .entry-info{
+        h4,p{
+            color: v.$white;
+        }
+        h4{
+            &::after {
+                content: '';
+                display: block;
+                width: 15rem;
+                height: 0.5rem;
+                background-color: v.$green;
+                margin-top: 0.5rem;
+            }
+        }
+        p{
+            .highlight {
+                color: v.$yellow;
+            }
+        }
+    }
+}

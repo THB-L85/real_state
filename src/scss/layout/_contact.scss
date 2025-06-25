@@ -17,10 +17,11 @@
         }
         p{
             color: v.$white;
+            margin-block: 4rem;
         }
-        button{
+        a{
             background-color: v.$yellow;
-            // width: 100%;
+            margin-top: 2rem;
             border: none;
             color: v.$white;
             font-weight: v.$bold;
