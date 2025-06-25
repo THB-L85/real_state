@@ -1,0 +1,31 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contact {
+    background-color: v.$darkGray;
+    background-image: url('/src/img/encuentra.jpg');
+    background-size: cover;
+    background-position: 50% center;
+    padding: 10rem 0;
+
+    &-info {
+        @include m.container();
+        text-align: center;
+        h2{
+            font-size: 4rem;
+            font-weight: v.$w_black;
+        }
+        p{
+            color: v.$white;
+        }
+        button{
+            background-color: v.$yellow;
+            // width: 100%;
+            border: none;
+            color: v.$white;
+            font-weight: v.$bold;
+            font-size: 1.5rem;
+            padding: 1.5rem 3rem;
+        }
+    }
+}

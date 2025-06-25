@@ -10,44 +10,42 @@
             gap: 2rem;
         }
     }
+    button{
+        background-color: v.$yellow;
+        width: 100%;
+        border: none;
+        color: v.$white;
+        font-weight: v.$bold;
+        font-size: 1.5rem;
+        padding: 1.5rem 3rem;
+    }
 }
 .ad-content{
     background-color: v.$darkGray;
-    margin-bottom: 2rem;
-
-    .ad-info{
-        padding: 2rem;
-        h3,p{
-            margin: 0;
-        }
-        .icons-list{
+    margin-bottom: 2rem; 
+}
+.ad-info{
+    padding: 2rem;
+    h3,p{
+        margin: 0;
+    }
+    .icons-list{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        max-width: 40rem;
+        
+        li{
             display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            max-width: 40rem;
-            
-            li{
-                display: flex;
-                flex: 1;
-                img{
-                    flex: 0 0 3rem;
-                    margin-right: 1rem;
-                    filter: invert(100%);
-                }
+            flex: 1;
+            img{
+                flex: 0 0 3rem;
+                margin-right: 1rem;
+                filter: invert(100%);
             }
         }
-        button{
-            background-color: v.$yellow;
-            width: 100%;
-            border: none;
-            color: v.$white;
-            font-weight: v.$bold;
-            font-size: 1.5rem;
-            padding: 1.5rem;
-        }
-    }
+    }   
 }
-
 .ad-info{
     p{
         color: v.$white;
@@ -58,3 +56,21 @@
         font-size: 3rem;
     }
 }
+
+.button-container{
+    @include m.container();
+    text-align: center;
+    button{
+        width: auto;
+        background-color: v.$green;
+    }
+    @include m.tablet{
+        display: flex;
+        justify-content: end;
+        button{
+            width: fit-content;
+        }
+    }
+}
+
+
