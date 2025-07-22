@@ -2,17 +2,19 @@
 @use 'base/mixins' as m;
 
 .blog{
+    @include m.container();
     @include m.tablet{
         display: grid;
         grid-template-columns: 2fr 1fr;
     };
 }
 .blog-content{
-    @include m.container();
+    // @include m.container();
     article{
         @include m.tablet{
             display: grid;
             grid-template-columns: 1fr 2fr;
+            column-gap: 2rem;
         };
     }
     .entry-info{
@@ -20,6 +22,7 @@
             color: v.$white;
         }
         h4{
+            margin: 0;
             &::after {
                 content: '';
                 display: block;
@@ -34,5 +37,30 @@
                 color: v.$yellow;
             }
         }
+    }
+}
+.testimonals-content{
+    padding: 3rem;
+    background: v.$green;
+    border-radius: 2rem;
+    font-size: 2.4rem;
+    blockquote{
+        position: relative;
+        padding-left: 5rem;
+    }
+    &:before{
+        content: "";
+        background-image: url('/../src/img/comilla.svg');
+        background-repeat: no-repeat;
+        width: 6rem;
+        height: 8rem;
+        display: block;
+        position: absolute;
+    }
+    p{
+        color: v.$white;
+        font-size: 2rem;
+        margin: 0;
+        text-align: right;
     }
 }
