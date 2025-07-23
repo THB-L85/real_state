@@ -36,6 +36,7 @@ header {
         font-size: 4rem;
         font-weight: v.$light;
         text-align: center;
+        text-transform: uppercase;
         @include m.tablet{
             text-align: left;
         }
