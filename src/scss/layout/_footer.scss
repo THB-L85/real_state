@@ -3,6 +3,7 @@
 
 footer{
     background-color: v.$darkGray;
+    margin-top: 3rem;
 }
 .footer-content{
     @include m.container();
@@ -11,15 +12,17 @@ footer{
     align-items: center;
     padding: 2rem 0;
     .footer-nav{
-        
+        padding-top: 2rem;
         ul{
             @include m.reset-list();
             display: flex;
             flex-direction: row;
+            gap: 2rem;
             justify-content: center;
             align-items: center;
             a{
                 color: v.$white;
+                font-size: 1.8rem;
             }
         }        
     }
