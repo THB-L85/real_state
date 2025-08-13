@@ -8,6 +8,22 @@
            @include m.grid(3, 3rem);
         }
     }
+    &-content{
+        @include m.container();
+        @include m.grid(2, 3rem);
+        .about-description{
+            
+            blockquote{
+                font-size: 2.2rem;
+                font-weight: v.$bold;
+                margin: 0;
+            }
+            p{
+                color: v.$white;
+            }
+        }
+    }
+    
 }
 
 .icon-content{
