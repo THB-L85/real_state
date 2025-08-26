@@ -59,11 +59,16 @@ header {
             }
             &:last-child{
                 align-self: center;
+            }&:hover{
+                a{
+                    color: v.$green;
+                }
             }
         }
         & img{
             width: 2.5rem;
             height: 2.5rem;
         }
+        
     }
 }

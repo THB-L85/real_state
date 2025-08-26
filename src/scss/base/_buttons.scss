@@ -4,3 +4,6 @@
 .green-button{
     @include m.button(v.$green,inline-block)
 }
+.yellow-button{
+    @include m.button(v.$yellow,inline-block)
+}
