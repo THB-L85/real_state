@@ -1,4 +1,5 @@
 @use "variables" as v;
+@use 'sass:color' as color;
 
 @mixin telefono {
     @media (min-width: #{v.$mobile}) {
@@ -34,4 +35,19 @@
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+@mixin button($bgColor,$display){
+    display: $display;
+    font-size: 1.5rem;
+    font-weight: v.$bold;
+    background-color: $bgColor;
+    color: v.$white;
+    border: none;
+    padding: 1.5rem 3rem;
+    text-align: center;
+    &:hover {
+        background-color:  color.adjust($bgColor, $lightness: -5%);
+        cursor: pointer;
+    }
 }

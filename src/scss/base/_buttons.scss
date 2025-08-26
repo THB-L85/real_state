@@ -1,0 +1,6 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.green-button{
+    @include m.button(v.$green,inline-block)
+}

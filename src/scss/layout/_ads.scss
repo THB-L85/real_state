@@ -5,8 +5,8 @@
     &-container{
         @include m.container();
         @include m.tablet{
-            display: flex;
-            flex-direction: row;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
             gap: 2rem;
         }
     }
@@ -20,6 +20,18 @@
         font-size: 1.5rem;
         padding: 1.5rem 3rem;
         text-align: center;
+    }
+    .ad-container{
+        @include m.tablet{
+            display: flex;
+            flex-direction: column;
+        }
+        .ad-info{
+            background-color: v.$darkGray;
+            ul{
+                padding: 0;
+            }
+        }
     }
 }
 .ad-content{
@@ -74,5 +86,8 @@
         }
     }
 }
+
+
+
 
 

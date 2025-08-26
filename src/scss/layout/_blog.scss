@@ -9,13 +9,13 @@
     };
 }
 .blog-content{
-    // @include m.container();
     article{
         @include m.tablet{
             display: grid;
             grid-template-columns: 1fr 2fr;
             column-gap: 2rem;
         };
+        margin-bottom: 2rem;
     }
     .entry-info{
         h4,p{
@@ -36,6 +36,10 @@
             .highlight {
                 color: v.$yellow;
             }
+        }
+        .entry-description{
+            background-color: v.$darkGray;
+            padding: 2rem;
         }
     }
 }

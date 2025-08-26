@@ -29,4 +29,33 @@
             padding: 1.5rem 3rem;
         }
     }
+
+    &-form{
+        fieldset{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.5rem;
+            legend{
+                font-size: 2rem;
+                text-transform: uppercase;
+            }
+            label{
+                font-weight: v.$bold;
+            }
+            input,select,textarea{
+                background-color: v.$darkGray;
+                border: none;
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+                border-radius: 1rem;
+                color: v.$white;
+            }
+        }
+    }
+
+    &-method{
+        label{
+            margin-inline: 1rem;
+        }
+    }
 }
