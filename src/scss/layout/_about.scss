@@ -9,10 +9,10 @@
         }
     }
     &-content{
+        padding-bottom: 2rem;
         @include m.container();
         @include m.grid(2, 3rem);
         .about-description{
-            
             blockquote{
                 font-size: 2.2rem;
                 font-weight: v.$bold;
