@@ -1,5 +1,6 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
+@use 'sass:color' as color;
 
 .ads{
     &-container{
@@ -35,7 +36,7 @@
     }
 }
 .ad-content{
-    background-color: v.$darkGray;
+    background-color: color.adjust(v.$white, $lightness: -10%);
     margin-bottom: 2rem; 
 }
 .ad-info{
@@ -55,14 +56,14 @@
             img{
                 flex: 0 0 3rem;
                 margin-right: 1rem;
-                filter: invert(100%);
+                
             }
         }
     }   
 }
 .ad-info{
-    p{
-        color: v.$white;
+    .ad-description{
+        color: v.$black;
     }
     .price{
         color: v.$green;

@@ -7,7 +7,7 @@
     background-size: cover;
     background-position: 50% center;
     padding: 10rem 0;
-
+    color: v.$white;
     &-info {
         @include m.container();
         text-align: center;

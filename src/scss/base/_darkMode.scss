@@ -1,7 +1,39 @@
 @use 'variables' as v;
 @use 'sass:color' as color;
 
-body {
+.dark-mode {
     background-color: color.adjust(v.$darkGray, $lightness: -10%);
-    color: v.$white
+    color: v.$white;
+    .about{
+        .icon-content{
+            p{
+                color: v.$white;
+            }
+        }
+    }
+    .ads{
+        .ad-content{
+            background-color: v.$darkGray;
+            .ad-description{
+                color: v.$white;
+            }
+            .icons-list{
+                img{
+                    filter: invert(100%);
+                }
+                p{
+                    color: v.$white;
+                }
+            }
+        }
+    }
+    .blog{
+        .blog-content{
+            .entry-info{
+                h4,p{
+                    color: v.$white;
+                }
+            }
+        }
+    }
 }
