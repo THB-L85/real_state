@@ -10,11 +10,16 @@
                 color: v.$white;
             }
         }
+        .about-description{
+            p{
+                color: v.$white;
+            }
+        }
     }
     .ads{
         .ad-content{
             background-color: v.$darkGray;
-            .ad-description{
+            .ad-description, p.ad-description{
                 color: v.$white;
             }
             .icons-list{
