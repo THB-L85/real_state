@@ -43,12 +43,12 @@
                 font-weight: v.$bold;
             }
             input,select,textarea{
-                background-color: v.$darkGray;
-                border: none;
+                background-color: v.$white;
+                border: 1px solid v.$gray;
                 padding: 1.5rem;
                 margin-bottom: 2rem;
                 border-radius: 1rem;
-                color: v.$white;
+                color: v.$darkGray;
             }
         }
     }

@@ -41,4 +41,11 @@
             }
         }
     }
+    .contact-form{
+        .contact-form-section input, textarea, select{
+            background-color: v.$darkGray;
+            color: v.$white;
+            border: none;
+        }
+    }
 }
