@@ -1,6 +1,19 @@
 document.addEventListener('DOMContentLoaded', function (){
     darkMode();
+    eventListeners();
 })
+
+function eventListeners(){
+    const mobileMenu = document.querySelector('.mobile-icon-menu');
+    mobileMenu.addEventListener('click', openMenu);   
+}
+
+function openMenu(){
+    const navBarLinks = document.querySelector('.navbar-links')
+    console.log(navBarLinks.style.display);
+    
+    navBarLinks.style.display = navBarLinks.style.display == "none" ? "flex" : "none";
+}
 
 function darkMode(){
     const prefiereDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
