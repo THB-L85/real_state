@@ -41,6 +41,13 @@
             }
         }
     }
+    .blog-content{
+        .entry-info{
+            h4,p{
+                color: v.$white;
+            }
+        }
+    }
     .contact-form{
         .contact-form-section input, textarea, select{
             background-color: v.$darkGray;

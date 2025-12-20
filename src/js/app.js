@@ -10,9 +10,8 @@ function eventListeners(){
 
 function openMenu(){
     const navBarLinks = document.querySelector('.navbar-links')
-    console.log(navBarLinks.style.display);
-    
-    navBarLinks.style.display = navBarLinks.style.display == "none" ? "flex" : "none";
+    navBarLinks.classList.toggle('show-menu');
+    // navBarLinks.style.display = navBarLinks.style.display == "none" ? "flex" : "none";
 }
 
 function darkMode(){
