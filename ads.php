@@ -1,26 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="build/css/app.css">
-    <title>Real State - Ads</title>
-</head>
-<body class="dark-mode">
-    <header>
-        <div class="container header-container">
-            <div class="navbar">
-                <a href="/" class="logo">Real<span>State</span></a>
-                <ul class="navbar-links">
-                    <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/ads.html">Ads</a></li>
-                    <li><a href="/blog.html">Blog</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
-                    <li><a href="#" class="dark-mode-boton"><img src="src/img/moon.png" alt=""></a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+<?php 
+    require 'includes/templates/header.php';
+?>
     <main>
         <div class="section ads">
             <h2>Casas y Depas en Venta</h2>
@@ -45,7 +25,7 @@
                                 <p>4</p>
                             </li>
                         </ul>
-                        <a href="/ad.html" class="yellow-button">Ver Más</a>
+                        <a href="/ad.php" class="yellow-button">Ver Más</a>
                     </div>
                 </div>
                 <div class="ad-content">
@@ -68,7 +48,7 @@
                                 <p>4</p>
                             </li>
                         </ul>
-                        <a href="/ad.html" class="yellow-button">Ver Más</a>
+                        <a href="/ad.php" class="yellow-button">Ver Más</a>
                     </div>
                 </div>
                 <div class="ad-content">
@@ -91,7 +71,7 @@
                                 <p>4</p>
                             </li>
                         </ul>
-                        <a href="/ad.html" class="yellow-button">Ver Más</a>
+                        <a href="/ad.php" class="yellow-button">Ver Más</a>
                     </div>
                 </div>
                 <div class="ad-content">
@@ -114,7 +94,7 @@
                                 <p>4</p>
                             </li>
                         </ul>
-                        <a href="/ad.html" class="yellow-button">Ver Más</a>
+                        <a href="/ad.php" class="yellow-button">Ver Más</a>
                     </div>
                 </div>
                 <div class="ad-content">
@@ -137,7 +117,7 @@
                                 <p>4</p>
                             </li>
                         </ul>
-                        <a href="/ad.html" class="yellow-button">Ver Más</a>
+                        <a href="/ad.php" class="yellow-button">Ver Más</a>
                     </div>
                 </div>
                 <div class="ad-content">
@@ -160,25 +140,12 @@
                                 <p>4</p>
                             </li>
                         </ul>
-                        <a href="/ad.html" class="yellow-button">Ver Más</a>
+                        <a href="/ad.php" class="yellow-button">Ver Más</a>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <footer class="footer">
-        <div class="footer-content section">
-            <div class="footer-nav">
-                <ul>
-                    <li><li><a href="/about.html">About Us</a></li>
-                    <li><a href="/ads.html">Ads</a></li>
-                    <li><a href="/blog.html">Blog</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <p> All right reserved 2025 ©</p>
-        </div>
-    </footer>
-    <script src="build/js/app.js"></script>
-</body>
-</html>
+<?php
+   require 'includes/templates/footer.php';
+?>

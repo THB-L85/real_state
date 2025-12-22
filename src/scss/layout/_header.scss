@@ -31,6 +31,7 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    height: 10rem;
     @include m.tablet{
         flex-direction: row;
         justify-content: space-between;
@@ -72,7 +73,7 @@ header {
         li{
             margin: 0 1rem;
             a{
-                font-size: 1.8rem;
+                font-size: 2rem;
                 color: v.$white;
             }
             &:last-child{
@@ -101,4 +102,8 @@ header {
 .show-menu{
     visibility: visible;
     opacity: 100;
+}
+
+.navbar-mobile-show{
+    height: auto;
 }

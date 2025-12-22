@@ -1,29 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="src/img/bienes-raices.png" type="image/x-icon">
-    <link rel="stylesheet" href="build/css/app.css">
-    <title>Real State</title>
-</head>
-<body>
-    <header class="inicio">
-        <div class="container header-container">
-            <div class="navbar">
-                <a href="#" class="logo">Real<span>State</span></a>
-                <img class="mobile-icon-menu" src="src/img/barras.svg" alt="barras">
-                <ul class="navbar-links">
-                    <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/ads.html">Ads</a></li>
-                    <li><a href="/blog.html">Blog</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
-                    <li><a href="#" class="dark-mode-boton"><img src="src/img/moon.png" alt=""></a></li>
-                </ul>
-            </div>
-            <h1>Venta de Casas y Departamentos Exclusivos de Lujo</h1>
-        </div>
-    </header>
+<?php
+    $inicio = true;
+    require 'includes/templates/header.php';
+?>
     <main class="section about">
         <h1>About Us</h1>
         <div class="icons">
@@ -67,7 +45,7 @@
                             <p>4</p>
                         </li>
                     </ul>
-                    <a href="/ad.html" class="yellow-button">Ver Más</a>
+                    <a href="/ad.php" class="yellow-button">Ver Más</a>
                 </div>
             </div>
             <div class="ad-content">
@@ -90,7 +68,7 @@
                             <p>4</p>
                         </li>
                     </ul>
-                    <a href="/ad.html" class="yellow-button">Ver Más</a>
+                    <a href="/ad.php" class="yellow-button">Ver Más</a>
                 </div>
             </div>
             <div class="ad-content">
@@ -113,7 +91,7 @@
                             <p>4</p>
                         </li>
                     </ul>
-                    <a href="/ad.html" class="yellow-button">Ver Más</a>
+                    <a href="/ad.php" class="yellow-button">Ver Más</a>
                 </div>
             </div>
         </div>
@@ -125,7 +103,7 @@
         <div class="contact-info">
             <h2>Encuentra la casa de tus sueños</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto totam excepturi.</p>
-            <a href="/contact.html" class="yellow-button">
+            <a href="/contact.php" class="yellow-button">
                 Contact Us
             </a>
         </div>
@@ -138,7 +116,7 @@
                     <img src="src/img/blog1.jpg" alt="img-blog1">
                 </div>
                 <div class="entry-info">
-                    <a href="/entry.html" class="entry-link">
+                    <a href="/entry.php" class="entry-link">
                         <h4>Consejos para comprar tu primera casa</h4>
                         <p>Escrito el <span class="highlight">10/05/2025</span> por <span class="highlight">Admin</span> </p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
@@ -150,7 +128,7 @@
                     <img src="src/img/blog2.jpg" alt="img-blog2">
                 </div>
                 <div class="entry-info">
-                    <a href="/entry.html" class="entry-link">
+                    <a href="/entry.php" class="entry-link">
                         <h4>Terraza en el techo de tu casa</h4>
                         <p>Escrito el <span class="highlight">1/05/2025</span> por <span class="highlight">Admin</span> </p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
@@ -168,19 +146,6 @@
             </div>
         </div>
     </section>
-    <footer class="footer">
-        <div class="footer-content section">
-            <div class="footer-nav">
-                <ul>
-                    <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/ads.html">Ads</a></li>
-                    <li><a href="/blog.html">Blog</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <p> All right reserved 2025 ©</p>
-        </div>
-    </footer>
-    <script src="build/js/app.js"></script>
-</body>
-</html>
+<?php
+    require 'includes/templates/footer.php';
+?>

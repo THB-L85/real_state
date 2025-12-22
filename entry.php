@@ -12,10 +12,10 @@
             <div class="navbar">
                 <a href="/" class="logo">Real<span>State</span></a>
                 <ul class="navbar-links">
-                    <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/ads.html">Ads</a></li>
-                    <li><a href="/blog.html">Blog</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/about.php">About Us</a></li>
+                    <li><a href="/ads.php">Ads</a></li>
+                    <li><a href="/blog.php">Blog</a></li>
+                    <li><a href="/contact.php">Contact</a></li>
                     <li><a href="#" class="dark-mode-boton"><img src="src/img/moon.png" alt=""></a></li>
                 </ul>
             </div>
@@ -34,18 +34,6 @@
             </div>
         </div>
     </main>
-    <footer class="footer">
-        <div class="footer-content section">
-            <div class="footer-nav">
-                <ul>
-                    <li><li><a href="/about.html">About Us</a></li>
-                    <li><a href="/ads.html">Ads</a></li>
-                    <li><a href="/blog.html">Blog</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <p> All right reserved 2025 ©</p>
-        </div>
-    </footer>
-</body>
-</html>
+<?php
+    require 'includes/templates/footer.php';
+?>

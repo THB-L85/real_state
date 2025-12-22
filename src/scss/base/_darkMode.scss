@@ -19,6 +19,11 @@
     .ads{
         .ad-content{
             background-color: v.$darkGray;
+            .ad-info{
+                p.description{
+                    color: v.$white;
+                }
+            }
             .ad-description, p.ad-description{
                 color: v.$white;
             }
