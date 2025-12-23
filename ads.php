@@ -1,5 +1,6 @@
 <?php 
-    require 'includes/templates/header.php';
+    require 'includes/functions.php';
+    includeTemplate('header');
 ?>
     <main>
         <div class="section ads">
@@ -147,5 +148,5 @@
         </div>
     </main>
 <?php
-   require 'includes/templates/footer.php';
+   includeTemplate('footer');
 ?>

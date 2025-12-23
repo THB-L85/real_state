@@ -1,5 +1,6 @@
 <?php 
-    require 'includes/templates/header.php';
+    require 'includes/functions.php';
+    includeTemplate('header');
 ?>
     <main class="container section ads container-center">
         <h2>House with great view</h2>
@@ -31,5 +32,5 @@
         </div>
     </main>
 <?php
-    require 'includes/templates/footer.php';
+    includeTemplate('footer');
 ?>

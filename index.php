@@ -1,6 +1,6 @@
 <?php
-    $inicio = true;
-    require 'includes/templates/header.php';
+    require 'includes/functions.php';
+    includeTemplate('header', $isHome = true);
 ?>
     <main class="section about">
         <h1>About Us</h1>
@@ -147,5 +147,5 @@
         </div>
     </section>
 <?php
-    require 'includes/templates/footer.php';
+    includeTemplate('footer');
 ?>

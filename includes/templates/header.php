@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="build/css/app.css">
     <title>Real State</title>
 </head>
-<body class="dark-mode">
-    <header class="<?php echo isset($inicio) ? 'inicio' : ''; ?>">
+<body>
+    <header class="<?php echo $isHome ? 'inicio' : ''; ?>">
         <div class="container header-container">
             <div class="navbar">
                 <a href="/" class="logo">Real<span>State</span></a>
@@ -22,7 +22,7 @@
                 </ul>
             </div>
             <?php 
-                if(isset($inicio)) {
+                if(isset($isHome)) {
                     echo "<h1>Venta de Casas y Departamentos Exclusivos de Lujo</h1>";
                 }
             ?>

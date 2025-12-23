@@ -1,5 +1,6 @@
 <?php 
-    require 'includes/templates/header.php';
+    require 'includes/functions.php';
+    includeTemplate('header');
 ?>
     <main class="container section container-center blog">
         <div class="blog-content">
@@ -55,5 +56,5 @@
         </div>
     </main>
 <?php
-    require 'includes/templates/footer.php';
+    includeTemplate('footer');
 ?>

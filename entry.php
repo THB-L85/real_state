@@ -1,26 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="build/css/app.css">
-    <title>Real State - Entry</title>
-</head>
-<body class="dark-mode">
-    <header>
-        <div class="container header-container">
-            <div class="navbar">
-                <a href="/" class="logo">Real<span>State</span></a>
-                <ul class="navbar-links">
-                    <li><a href="/about.php">About Us</a></li>
-                    <li><a href="/ads.php">Ads</a></li>
-                    <li><a href="/blog.php">Blog</a></li>
-                    <li><a href="/contact.php">Contact</a></li>
-                    <li><a href="#" class="dark-mode-boton"><img src="src/img/moon.png" alt=""></a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+<?php
+    require 'includes/functions.php';
+    includeTemplate('header');
+?>
     <main class="container section container-center">
         <h2>Guía para la decoración de tu hogar</h2>
         <div class="blog-content">
@@ -35,5 +16,5 @@
         </div>
     </main>
 <?php
-    require 'includes/templates/footer.php';
+    includeTemplate('footer');
 ?>

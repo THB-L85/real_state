@@ -15,48 +15,54 @@ function openMenu(){
     navBar.classList.toggle('navbar-mobile-show');
 }
 
-function darkMode(){
+function darkMode() {
     const prefiereDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
-    const toggleButton = document.querySelector('.dark-mode-boton').firstElementChild;
-        
-    // console.log(prefiereDarkMode.matches);
+    const botonDarkMode = document.querySelector('.dark-mode-boton');
+    const toggleButton = botonDarkMode.firstElementChild;
 
-    if(prefiereDarkMode.matches) {
+    // 1️⃣ Cargar preferencia guardada
+    const themeGuardado = localStorage.getItem('theme');
+
+    if (themeGuardado === 'dark') {
         document.body.classList.add('dark-mode');
-        toggleButton.src = 'src/img/brightness.png'
-    } else {
+        toggleButton.src = 'src/img/brightness.png';
+    } else if (themeGuardado === 'light') {
         document.body.classList.remove('dark-mode');
-        toggleButton.src = 'src/img/moon.png'
-
-    }
-
-    prefiereDarkMode.addEventListener('change', function() {
-        if(prefiereDarkMode.matches) {
+        toggleButton.src = 'src/img/moon.png';
+    } else {
+        // 2️⃣ Si no hay preferencia guardada, usar la del sistema
+        if (prefiereDarkMode.matches) {
             document.body.classList.add('dark-mode');
-        toggleButton.src = 'src/img/brightness.png'
+            toggleButton.src = 'src/img/brightness.png';
         } else {
             document.body.classList.remove('dark-mode');
-        toggleButton.src = 'src/img/moon.png'
+            toggleButton.src = 'src/img/moon.png';
+        }
+    }
 
+    // 3️⃣ Cambios del sistema SOLO si el usuario no eligió manualmente
+    prefiereDarkMode.addEventListener('change', function () {
+        if (!localStorage.getItem('theme')) {
+            if (prefiereDarkMode.matches) {
+                document.body.classList.add('dark-mode');
+                toggleButton.src = 'src/img/brightness.png';
+            } else {
+                document.body.classList.remove('dark-mode');
+                toggleButton.src = 'src/img/moon.png';
+            }
         }
     });
 
-    const botonDarkMode = document.querySelector('.dark-mode-boton');
-    botonDarkMode.addEventListener('click', function() {
+    // 4️⃣ Click del usuario (guarda preferencia)
+    botonDarkMode.addEventListener('click', function () {
         document.body.classList.toggle('dark-mode');
-        
-        // Cambiar imagen dependiendo de si está en modo oscuro
+
         if (document.body.classList.contains('dark-mode')) {
-        console.log('toggle has dark');
-
-            toggleButton.src = 'src/img/brightness.png'; // Imagen para modo oscuro
-
+            toggleButton.src = 'src/img/brightness.png';
+            localStorage.setItem('theme', 'dark');
         } else {
-        console.log('toggle light');
-
-            toggleButton.src = 'src/img/moon.png'; // Imagen para modo claro
-
+            toggleButton.src = 'src/img/moon.png';
+            localStorage.setItem('theme', 'light');
         }
-
     });
 }
