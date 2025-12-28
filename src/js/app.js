@@ -25,18 +25,18 @@ function darkMode() {
 
     if (themeGuardado === 'dark') {
         document.body.classList.add('dark-mode');
-        toggleButton.src = 'src/img/brightness.png';
+        toggleButton.src = '/src/img/brightness.png';
     } else if (themeGuardado === 'light') {
         document.body.classList.remove('dark-mode');
-        toggleButton.src = 'src/img/moon.png';
+        toggleButton.src = '/src/img/moon.png';
     } else {
         // 2️⃣ Si no hay preferencia guardada, usar la del sistema
         if (prefiereDarkMode.matches) {
             document.body.classList.add('dark-mode');
-            toggleButton.src = 'src/img/brightness.png';
+            toggleButton.src = '/src/img/brightness.png';
         } else {
             document.body.classList.remove('dark-mode');
-            toggleButton.src = 'src/img/moon.png';
+            toggleButton.src = '/src/img/moon.png';
         }
     }
 
@@ -45,10 +45,10 @@ function darkMode() {
         if (!localStorage.getItem('theme')) {
             if (prefiereDarkMode.matches) {
                 document.body.classList.add('dark-mode');
-                toggleButton.src = 'src/img/brightness.png';
+                toggleButton.src = '/src/img/brightness.png';
             } else {
                 document.body.classList.remove('dark-mode');
-                toggleButton.src = 'src/img/moon.png';
+                toggleButton.src = '/src/img/moon.png';
             }
         }
     });
@@ -58,10 +58,10 @@ function darkMode() {
         document.body.classList.toggle('dark-mode');
 
         if (document.body.classList.contains('dark-mode')) {
-            toggleButton.src = 'src/img/brightness.png';
+            toggleButton.src = '/src/img/brightness.png';
             localStorage.setItem('theme', 'dark');
         } else {
-            toggleButton.src = 'src/img/moon.png';
+            toggleButton.src = '/src/img/moon.png';
             localStorage.setItem('theme', 'light');
         }
     });

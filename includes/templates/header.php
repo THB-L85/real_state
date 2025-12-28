@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="src/img/bienes-raices.png" type="image/x-icon">
-    <link rel="stylesheet" href="build/css/app.css">
+    <link rel="icon" href="/src/img/bienes-raices.png" type="image/x-icon">
+    <link rel="stylesheet" href="/build/css/app.css">
     <title>Real State</title>
 </head>
 <body>
@@ -18,11 +18,11 @@
                     <li><a href="/ads.php">Ads</a></li>
                     <li><a href="/blog.php">Blog</a></li>
                     <li><a href="/contact.php">Contact</a></li>
-                    <li><a href="#" class="dark-mode-boton"><img src="src/img/moon.png" alt=""></a></li>
+                    <li><a href="#" class="dark-mode-boton"><img src="/src/img/moon.png" alt=""></a></li>
                 </ul>
             </div>
             <?php 
-                if(isset($isHome)) {
+                if($isHome) {
                     echo "<h1>Venta de Casas y Departamentos Exclusivos de Lujo</h1>";
                 }
             ?>

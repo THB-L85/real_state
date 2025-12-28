@@ -11,6 +11,6 @@
             <p> All right reserved <?php echo date('Y'); ?> ©</p>
         </div>
     </footer>
-    <script src="build/js/app.js"></script>
+    <script src="/build/js/app.js"></script>
 </body>
 </html>
