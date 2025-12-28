@@ -2,6 +2,16 @@
     require('../../includes/config/database.php');
     $db = database_connect();
 
+    if($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // get inputs from form
+        $title = $_POST['title'];
+        $price = $_POST['price'];
+        $description = $_POST['description'];
+        $rooms = $_POST['rooms'];
+        $wc = $_POST['wc'];
+        $parking = $_POST['parking'];
+        $seller_id = $_POST['seller'];
+    }
     require('../../includes/functions.php');
     includeTemplate('header');
 ?>
@@ -11,7 +21,7 @@
 
         <a href="/admin/index" class="yellow-button">Back</a>
 
-        <form class="form" method="POST" action="" enctype="multipart/form-data">
+        <form class="form" method="POST" action="/admin/properties/create.php" enctype="multipart/form-data">
 
             <fieldset>
                 <legend>General Information</legend>
