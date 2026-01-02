@@ -3,15 +3,51 @@
     $db = database_connect();
 
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+
+        // echo '<pre>'; 
+        //     var_dump($_POST);
+        // echo '</pre>';
+        // echo '<pre>'; 
+        //     var_dump($_FILES);
+        // echo '</pre>';
+        // exit;
+
+        $dirImages = '..//../images/';  
+        if(!is_dir($dirImages)){
+            mkdir($dirImages);
+        }
+
+        $image_name = md5(uniqid(rand(), true)) . '.jpg';
+
+        move_uploaded_file($_FILES['cover']['tmp_name'], $dirImages . $image_name );
+
         // get inputs from form
-        $title = $_POST['title'];
-        $price = $_POST['price'];
-        $description = $_POST['description'];
-        $rooms = $_POST['rooms'];
-        $wc = $_POST['wc'];
-        $parking = $_POST['parking'];
-        $seller_id = $_POST['seller'];
+        $title          = mysqli_real_escape_string($db, $_POST['title']);
+        $price          = mysqli_real_escape_string($db, $_POST['price']);
+        $description    = mysqli_real_escape_string($db, $_POST['description']);
+        $rooms          = mysqli_real_escape_string($db, $_POST['rooms']);
+        $wc             = mysqli_real_escape_string($db, $_POST['wc']);
+        $parking        = mysqli_real_escape_string($db, $_POST['parking']);
+        $seller_id      = mysqli_real_escape_string($db, $_POST['seller']);
+        $created_at     = date('Y/m/d');
+
+        $image = $_FILES['cover'];
+
+
+        $query = "INSERT INTO properties (title, price, cover, description, rooms, wc, parking, seller_id, created_at)
+        VALUES ('$title', $price, '$image_name','$description', $rooms, $wc, $parking, $seller_id, '$created_at')";
+
+        $result = mysqli_query($db, $query);
+
+        if($result){
+            header('Location: /admin/index');
+        }
     }
+
+    $sellers_query = "SELECT * FROM sellers";
+    $sellers = mysqli_query($db, $sellers_query);
+
     require('../../includes/functions.php');
     includeTemplate('header');
 ?>
@@ -54,8 +90,9 @@
                 <label for="seller">Select Seller:</label>
                 <select id="seller" name="seller" required>
                     <option value="" disabled selected>-- Select --</option>
-                    <option value="1">Seller 1</option>
-                    <option value="2">Seller 2</option>
+                    <?php while($seller = mysqli_fetch_assoc($sellers)): ?>
+                        <option value="<?php echo $seller['id']; ?>"><?php echo htmlspecialchars($seller['first_name']) . ' ' . htmlspecialchars($seller['last_name']); ?></option>
+                    <?php endwhile; ?>
                 </select>
             </fieldset>
             <input type="submit" value="Create Property" class="green-button">
