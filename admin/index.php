@@ -48,6 +48,11 @@
                 </thead>
                 <tbody>
                     <?php
+                        if(mysqli_num_rows($properties) === 0):
+                    ?>
+                        <tr><td colspan='7' style="height:5rem;background-color: #e6e6e6;color:black">No properties yet.</td></tr>
+                    <?php endif; ?>
+                    <?php
                         while($property = mysqli_fetch_assoc($properties)):
                     ?>
                         <tr>
