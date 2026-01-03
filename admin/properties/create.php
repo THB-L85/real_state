@@ -13,7 +13,7 @@
         // echo '</pre>';
         // exit;
 
-        $dirImages = '..//../images/';  
+        $dirImages = '../../images/';  
         if(!is_dir($dirImages)){
             mkdir($dirImages);
         }
@@ -30,10 +30,7 @@
         $wc             = mysqli_real_escape_string($db, $_POST['wc']);
         $parking        = mysqli_real_escape_string($db, $_POST['parking']);
         $seller_id      = mysqli_real_escape_string($db, $_POST['seller']);
-        $created_at     = date('Y/m/d');
-
-        $image = $_FILES['cover'];
-
+        $created_at     = date("Y-m-d H:i:s");
 
         $query = "INSERT INTO properties (title, price, cover, description, rooms, wc, parking, seller_id, created_at)
         VALUES ('$title', $price, '$image_name','$description', $rooms, $wc, $parking, $seller_id, '$created_at')";

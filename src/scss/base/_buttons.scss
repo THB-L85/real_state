@@ -7,3 +7,6 @@
 .yellow-button{
     @include m.button(v.$yellow,inline-block)
 }
+.red-button{
+    @include m.button(v.$red,inline-block)
+}

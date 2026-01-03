@@ -3,24 +3,55 @@
 @use 'sass:color' as color;
 
 form{
-        fieldset{
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 1.5rem;
-            legend{
-                font-size: 2rem;
-                text-transform: uppercase;
-            }
-            label{
-                font-weight: v.$bold;
-            }
-            input,select,textarea{
-                background-color: v.$white;
-                border: 1px solid v.$gray;
-                padding: 1.5rem;
-                margin-bottom: 2rem;
-                border-radius: 1rem;
-                color: v.$darkGray;
+    fieldset{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+        legend{
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+        label{
+            font-weight: v.$bold;
+        }
+        input,select,textarea{
+            background-color: v.$white;
+            border: 1px solid v.$gray;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 1rem;
+            color: v.$darkGray;
+        }
+    }
+}
+
+.table{
+    &-properties {
+        width: 100%;
+        margin-top: 2rem;
+        border-color: v.$white;
+        text-align: center;
+        .image-property{
+            width: 10rem;
+            margin-inline: auto;
+        }
+        .actions{
+            padding: 1rem;
+            .action-button{
+                padding: 1rem 2rem;
+                width: 100%;
+                margin-bottom: 0.5rem;
             }
         }
     }
+    &-header {
+        background-color: v.$green;
+        color: v.$white;
+    }
+}
+
+.update-image-property{
+    width: 30rem;
+    margin-bottom: 2.5rem;
+}
+
