@@ -8,7 +8,23 @@
     $properties_query = "SELECT properties.*, sellers.first_name, sellers.last_name FROM properties
     LEFT JOIN sellers ON properties.seller_id = sellers.id
     ORDER BY properties.created_at ASC";
+
     $properties = mysqli_query($db, $properties_query);
+
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        $id = mysqli_real_escape_string($db, $_POST['id']);
+
+        $query = "SELECT cover FROM properties WHERE id = $id";
+        $result = mysqli_query($db, $query);
+        unlink('../images/' . mysqli_fetch_assoc($result)['cover']);
+
+        $query = "DELETE FROM properties WHERE id = $id";
+        $result = mysqli_query($db, $query);
+
+        if($result){
+            header('Location: /admin/index');
+        }
+    }
 
     includeTemplate('header');
 ?>
@@ -43,7 +59,7 @@
                             <td><?= $property['first_name'] . ' ' . $property['last_name'] ?></td>
                             <td class="actions">
                                 <a href="/admin/properties/update.php?id=<?= $property['id'] ?>" class="yellow-button action-button">Edit</a>
-                                <form method="POST" action="/admin/properties/delete.php">
+                                <form method="POST" action="/admin/index.php">
                                     <input type="hidden" name="id" value="<?= $property['id'] ?>">
                                     <button type="submit" class="red-button action-button"> Delete </button>
                                 </form>
