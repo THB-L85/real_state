@@ -48,7 +48,7 @@
         $wc             = mysqli_real_escape_string($db, $_POST['wc']);
         $parking        = mysqli_real_escape_string($db, $_POST['parking']);
         $seller_id      = mysqli_real_escape_string($db, $_POST['seller']);
-        $created_at     = date("Y-m-d H:i:s");
+        $updated_at     = date("Y-m-d H:i:s");
 
         if(!empty($_FILES['cover']['tmp_name'])){
             $image_name = md5(uniqid(rand(), true)) . '.jpg';
@@ -59,7 +59,7 @@
             $cover = $image;
         }
 
-        $query = "UPDATE properties SET title='$title', price=$price, cover='$cover', description='$description', rooms=$rooms, wc=$wc, parking=$parking, seller_id=$seller_id, created_at='$created_at' WHERE id = $idproperty";
+        $query = "UPDATE properties SET title='$title', price=$price, cover='$cover', description='$description', rooms=$rooms, wc=$wc, parking=$parking, seller_id=$seller_id, updated_at='$updated_at' WHERE id = $idproperty";
 
         $result = mysqli_query($db, $query);
 
@@ -96,7 +96,7 @@
                 <input type="hidden" id="image" name="image" value="<?php echo $property['cover'] ?>">
                 
                 <label for="description">Description:</label>
-                <textarea id="description" name="description" required> <?php echo $property['description'] ?> </textarea>
+                <textarea id="description" name="description" required><?php echo $property['description'] ?></textarea>
 
             </fieldset>
             <fieldset>
