@@ -1,3 +1,9 @@
+<?php 
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +25,7 @@
                     <li><a href="/blog.php">Blog</a></li>
                     <li><a href="/contact.php">Contact</a></li>
                     <li><a href="#" class="dark-mode-boton"><img src="/src/img/moon.png" alt=""></a></li>
+                    <li><a href="/logout.php" <?php if(!isset($_SESSION['user'])) echo 'hidden' ?>>Logout</a></li>
                 </ul>
             </div>
             <?php 

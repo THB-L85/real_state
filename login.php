@@ -19,6 +19,33 @@
             $errors[] = "Password is required or wrong password.";
         }
 
+        if(empty($errors)){
+            // Check if the user exists
+            $query = "SELECT * FROM users WHERE email = '$email'";
+            $result = mysqli_query($db, $query);
+
+            if($result->num_rows){
+                // User exists, verify password
+                $user = mysqli_fetch_assoc($result);
+                $verified = password_verify($password, $user['password']);
+
+                if($verified){
+                    // Start the session
+                    session_start();
+
+                    // Store user info in session
+                    $_SESSION['user'] = $user['email'];
+                    $_SESSION['login'] = true;
+
+                    // Redirect to admin area
+                    header('Location: /admin/index.php');
+                } else {
+                    $errors[] = "Incorrect password.";
+                }
+            } else {
+                $errors[] = "User does not exist.";
+            }
+        }
     }
 
     includeTemplate('header');

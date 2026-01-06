@@ -2,6 +2,9 @@
     require('../includes/functions.php');
     require('../includes/config/database.php');
 
+    if(!isAuthenticated()){
+        header('Location: /');
+    }
 
     $db = database_connect();
 

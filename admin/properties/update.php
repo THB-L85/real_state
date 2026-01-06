@@ -1,5 +1,11 @@
 <?php 
     require('../../includes/config/database.php');
+    require('../../includes/functions.php');
+
+    if(!isAuthenticated()){
+        header('Location: /');
+    }
+
     $db = database_connect();
 
     if($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -9,14 +15,6 @@
         $property_result = mysqli_query($db, $property_query);
         $property = mysqli_fetch_assoc($property_result);
 
-        // echo '<pre>'; 
-        //     var_dump($_GET);
-        // echo '</pre>';
-        // echo '<pre>'; 
-        //     var_dump($property);
-        // echo '</pre>';
-        // exit;
-
         if(!$property){
             header('Location: /admin/index');
         }
@@ -24,14 +22,6 @@
 
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-
-        // echo '<pre>'; 
-        //     var_dump($_POST);
-        // echo '</pre>';
-        // echo '<pre>'; 
-        //     var_dump(empty($_FILES['cover']['tmp_name']));
-        // echo '</pre>';
-        // exit;
 
         $dirImages = '../../images/';  
         if(!is_dir($dirImages)){
@@ -71,7 +61,6 @@
     $sellers_query = "SELECT * FROM sellers";
     $sellers = mysqli_query($db, $sellers_query);
 
-    require('../../includes/functions.php');
     includeTemplate('header');
 ?>
 

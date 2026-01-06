@@ -1,17 +1,14 @@
 <?php 
     require('../../includes/config/database.php');
+    require('../../includes/functions.php');
+    
+    if(!isAuthenticated()){
+        header('Location: /');
+    }
+
     $db = database_connect();
 
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-
-        // echo '<pre>'; 
-        //     var_dump($_POST);
-        // echo '</pre>';
-        // echo '<pre>'; 
-        //     var_dump($_FILES);
-        // echo '</pre>';
-        // exit;
 
         $dirImages = '../../images/';  
         if(!is_dir($dirImages)){
@@ -45,7 +42,6 @@
     $sellers_query = "SELECT * FROM sellers";
     $sellers = mysqli_query($db, $sellers_query);
 
-    require('../../includes/functions.php');
     includeTemplate('header');
 ?>
 
