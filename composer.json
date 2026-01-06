@@ -1,0 +1,15 @@
+{
+    "name": "luis/real_state",
+    "type": "project",
+    "authors": [
+        {
+            "name": "luis"
+        }
+    ],
+    "require": {},
+    "autoload":{
+        "psr-4":{
+            "App\\":"./classes"
+        }
+    }
+    }
