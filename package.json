@@ -5,7 +5,7 @@
   "description": "Real Estate landing page",
   "main": "gulpfile.js",
   "scripts": {
-    "dev": "gulp"
+    "build": "gulp"
   },
   "author": "Luis Duran",
   "license": "ISC",
