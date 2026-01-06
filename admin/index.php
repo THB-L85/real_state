@@ -1,10 +1,7 @@
 <?php 
-    require('../includes/functions.php');
-    require('../includes/config/database.php');
+    require('../includes/app.php');
 
-    if(!isAuthenticated()){
-        header('Location: /');
-    }
+    isAuthenticated();
 
     $db = database_connect();
 

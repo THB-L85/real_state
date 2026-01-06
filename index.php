@@ -1,5 +1,5 @@
 <?php
-    require 'includes/functions.php';
+    require 'includes/app.php';
     includeTemplate('header', $isHome = true);
 ?>
     <main class="section about">

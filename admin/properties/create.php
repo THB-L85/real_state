@@ -1,14 +1,20 @@
 <?php 
-    require('../../includes/config/database.php');
-    require('../../includes/functions.php');
+    require('../../includes/app.php');
+
     
-    if(!isAuthenticated()){
-        header('Location: /');
-    }
+    use App\Properties;
+
+
+    isAuthenticated();
 
     $db = database_connect();
 
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        $property = new Properties($_POST);
+        $property->save(); 
+        
+        exit();
 
         $dirImages = '../../images/';  
         if(!is_dir($dirImages)){
@@ -80,8 +86,8 @@
             </fieldset>
             <fieldset>
                 <legend>Seller</legend>
-                <label for="seller">Select Seller:</label>
-                <select id="seller" name="seller" required>
+                <label for="seller_id">Select Seller:</label>
+                <select id="seller_id" name="seller_id" required>
                     <option value="" disabled selected>-- Select --</option>
                     <?php while($seller = mysqli_fetch_assoc($sellers)): ?>
                         <option value="<?php echo $seller['id']; ?>"><?php echo htmlspecialchars($seller['first_name']) . ' ' . htmlspecialchars($seller['last_name']); ?></option>

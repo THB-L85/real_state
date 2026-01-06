@@ -1,10 +1,15 @@
 <?php 
-    require('../../includes/config/database.php');
-    require('../../includes/functions.php');
+    require('../../includes/app.php');
 
-    if(!isAuthenticated()){
-        header('Location: /');
-    }
+    use App\Properties;
+
+    $property = new Properties();
+
+    echo '<pre>';
+    var_dump($property);
+    echo '</pre>';
+
+    isAuthenticated();
 
     $db = database_connect();
 
